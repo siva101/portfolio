@@ -3,11 +3,12 @@
 <head>
     <meta charset="utf-8">
     {% load staticfiles %}
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
-    <title>My Portfoilio Website built in Django</title>
+    <title>{{ blog.title }}</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/album/">
 
@@ -65,40 +66,22 @@
     </nav>
 </header>
 
-<body role="main">
+<main role="main">
+    <div class="container">
+<h1 class="text-center pt-3"> {{ blog.title }}</h1>
+<hr>
 
-    <section class="jumbotron text-center">
-        <div class="container">
-            <h1>Hello, Welcome!!</h1>
-            <p class="lead text-muted">I am Siva , I love to make sites in Django</p>
-            <p>
-                <a href="mailto:sivaperumal2000@gmail.com" class="btn btn-primary my-2">Email me </a>
-            </p>
-             <img src="{% static 'siva.jpg'%}" width="200" height="200" />
+    <h3><{{ blog.title }}</a></h3>
+    {{ b.pubdate }}
+    <br />
+        <div class="text-center">
+    <img class="img-fluid " src="{{ blog.image.url}}" height="200" width="200" />
         </div>
-    </section>
+    <br />
+        <p>{{ blog.body }} </p>
 
-    <div class="album py-5 bg-light">
-        <div class="container">
 
-            <div class="row">
-               {% for j in jobs.all %}
-
-                <div class="col-md-4">
-                    <div class="card mb-4 shadow">
-                        <img class="card-img-top" src="{{ j.image.url }}"  />
-
-                        <div class="card-body">
-                            <p class="card-text">{{ j.summary }}.</p>
-
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-    </div>
-
+    </div?
 </main>
 
 <footer class="text-muted">
